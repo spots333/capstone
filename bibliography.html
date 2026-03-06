@@ -15,11 +15,70 @@
 			</header>
 			<section>
 				<header class="main">
-					<h1>Bibliography</h1>
+					<h1>Annotated Bibliography</h1>
 				</header>
-				<p>This page lists by theme the resources that assisted you in your capstone work.</p>
-			<hr />
-			<p class="copyright" style="font-size:0.85em; color:#9fa3a6;">Website design based on <a href="https://html5up.net">Editorial by HTML5 UP</a>, used under the <a href="https://html5up.net/license">CCA 3.0 license</a>.</p>
+
+
+				<!-- some backtesting theory I took inspiration from -->
+				<h2>Backtesting Theory</h2>
+				<p>These resources provided the conceptual foundation for what backtesting is, how it is used in practice, and what its limitations are when applied to historical data. They informed how results were interpreted. The resources also inspired many of the trading strategies I included in the final project.</p>
+				<div class="csl-bib-body" style="line-height: 2; margin-left: 2em; text-indent:-2em;">
+					<div class="csl-entry"><i>Backtesting in Trading: Definition, Benefits, and Limitations</i>. (n.d.). Investopedia. Retrieved March 5, 2026, from <a href="https://www.investopedia.com/terms/b/backtesting.asp">https://www.investopedia.com/terms/b/backtesting.asp</a></div>
+					<div class="csl-entry"><i>Backtesting Trading Strategies | Complete Guide</i>. (n.d.). Avatrade. Retrieved March 5, 2026, from <a href="https://www.avatrade.com/education/online-trading-strategies/backtesting-trading-strategies">https://www.avatrade.com/education/online-trading-strategies/backtesting-trading-strategies</a></div>
+				</div>
+
+				<hr />
+
+				<!-- Figma -->
+				<h2>Figma</h2>
+				<p>Figma was used to prototype and plan the layout of the user-facing components. This resource helped me learn core UI/UX principles, particularly around making the interface intuitive for users who are not familiar with prediction markets or trading data. </p>
+				<div class="csl-bib-body" style="line-height: 2; margin-left: 2em; text-indent:-2em;">
+					<div class="csl-entry"><i>Design Basics: UI/UX, Prototyping &amp; Core Principles</i>. (n.d.). Figma. Retrieved March 5, 2026, from <a href="https://www.figma.com/resource-library/design-basics/">https://www.figma.com/resource-library/design-basics/</a></div>
+				</div>
+
+				<hr />
+
+				<!-- JSON-->
+				<h2>JSON</h2>
+				<p>JSON was the primary data format returned by the Kalshi API, so understanding its structure and syntax was necessary. More importantly, JSON is the method used to store market data in the project. It provides the backbone for the entire project and beat SQLite in terms of speed and efficiency.</p>
+				<div class="csl-bib-body" style="line-height: 2; margin-left: 2em; text-indent:-2em;">
+					<div class="csl-entry"><i>JSON</i>. (n.d.). Retrieved March 5, 2026, from <a href="https://www.json.org/json-en.html">https://www.json.org/json-en.html</a></div>
+				</div>
+
+				<hr />
+
+				<!-- kalshi api -->
+				<h2>Kalshi API</h2>
+				<p>The Kalshi API was the core data source for this project. The documentation was referenced a lot when getting historical market candlestick data and setting up authentication. Additionally, historical candlestick data was only available to authenticated API requests which meant fetching market/series data on the go was impossible.</p>
+				<div class="csl-bib-body" style="line-height: 2; margin-left: 2em; text-indent:-2em;">
+					<div class="csl-entry"><i>Get Historical Market Candlesticks</i>. (n.d.). API Documentation. Retrieved March 5, 2026, from <a href="https://docs.kalshi.com/api-reference/historical/get-historical-market-candlesticks">https://docs.kalshi.com/api-reference/historical/get-historical-market-candlesticks</a></div>
+					<div class="csl-entry"><i>Quick Start: Authenticated Requests (No SDK)</i>. (n.d.). API Documentation. Retrieved March 5, 2026, from <a href="https://docs.kalshi.com/getting_started/quick_start_authenticated_requests">https://docs.kalshi.com/getting_started/quick_start_authenticated_requests</a></div>
+				</div>
+
+				<hr />
+
+				<!-- overall information about prediction markets -->
+				<h2>Prediction Markets</h2>
+				<p>An understanding of how prediction markets work was necessary before any meaningful analysis could be done. These resources explain the mechanics of prediction markets and the broader context in which platforms like Kalshi and Polymarket exist.</p>
+				<div class="csl-bib-body" style="line-height: 2; margin-left: 2em; text-indent:-2em;">
+					<div class="csl-entry"><i>How do prediction markets work?</i> (n.d.). Retrieved March 5, 2026, from <a href="https://news.kalshi.com/p/how-prediction-markets-work">https://news.kalshi.com/p/how-prediction-markets-work</a></div>
+					<div class="csl-entry">LLC, R. C. K. F. B. R. K. is managing director of X. E., economics,  has more than three decades of experience as a business executive H. is a professor of, &amp; Board,  has raised more than $4 5 billion in investment capital L. about our F. R. (n.d.). <i>Prediction Markets Explained: Types, Uses, and Real-World Examples</i>. Investopedia. Retrieved March 5, 2026, from <a href="https://www.investopedia.com/terms/p/prediction-market.asp">https://www.investopedia.com/terms/p/prediction-market.asp</a></div>
+					<div class="csl-entry">Prediction market. (2026). In <i>Wikipedia</i>. <a href="https://en.wikipedia.org/w/index.php?title=Prediction_market&amp;oldid=1340773596">https://en.wikipedia.org/w/index.php?title=Prediction_market&amp;oldid=1340773596</a></div>
+				</div>
+
+				<hr />
+
+				<!-- sqlite -->
+				<h2>SQLite</h2>
+				<p>SQLite was tested to store and query the market data collected from the Kalshi API. Upon testing, SQLite was found to not be effective in lowering the storage size of market data. More importantly, fetching data from the database took about 40% longer than from JSON files, killing its possible implementation in the project.</p>
+				<div class="csl-bib-body" style="line-height: 2; margin-left: 2em; text-indent:-2em;">
+					<div class="csl-entry"><i>Appropriate Uses For SQLite</i>. (n.d.). Retrieved March 5, 2026, from <a href="https://www.sqlite.org/whentouse.html">https://www.sqlite.org/whentouse.html</a></div>
+					<div class="csl-entry"><i>Sql.js</i>. (n.d.). Retrieved March 5, 2026, from <a href="https://sql.js.org/#/">https://sql.js.org/#/</a></div>
+				</div>
+
+				<hr />
+				<p style="font-size:0.85em; color:#9fa3a6;">Website design based on <a href="https://html5up.net">Editorial by HTML5 UP</a>, used under the <a href="https://html5up.net/license">CCA 3.0 license</a>.</p>
+
 			</section>
 		</div>
 	</div>

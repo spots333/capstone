@@ -9,7 +9,16 @@
 			display: block;
 			max-width: 100%;
 			border: solid 1px rgba(210, 215, 217, 0.75);
+		}
+		figure {
 			margin: 1.5em 0 2em 0;
+		}
+		figcaption {
+			font-size: 0.9em;
+			color: #666;
+			font-style: italic;
+			margin-top: 0.5em;
+			text-align: left;
 		}
 	</style>
 </head>
@@ -26,7 +35,7 @@
 					<h1>User Experience</h1>
 				</header>
 
-				<p>Prediction markets are a new kind of financial market where you trade on the outcome of real-world events, not stocks or commodities, but things like whether New York's highest temperature will exceed 70°F on a given day. Each contract pays out $1.00 if the event happens and $0.00 if it doesn't. (You may buy as many of these contracts as you wish) The price of a contract at any moment reflects the market's collective probability estimate of that outcome. This app gives you a way to explore whether simple trading strategies can find an edge in those markets.</p>
+				<p>Prediction markets are a new kind of financial market where you trade on the outcome of real-world events, not stocks or commodities, but things like whether New York's highest temperature will exceed 70°F on a given day. Each contract pays out $1.00 if the event happens and $0.00 if it doesn't. (You may buy as many of these contracts as you wish.) The price of a contract at any moment reflects the market's collective probability estimate of that outcome. This app gives you a way to explore whether simple trading strategies can find an edge in those markets.</p>
 
 				<hr />
 
@@ -46,9 +55,12 @@
 				<h2>How It Works</h2>
 				<p>Using the app takes three steps. First, you pick a market. Second, you choose a trading strategy from the eight available options. Third, for most strategies, you set how many hours before market close the trade executes.</p>
 
-				<img src="content/figma_output.png" alt="Backtesting results dashboard showing portfolio value over time and weekly returns" class="artifact-img" />
+				<figure>
+					<img src="content/figma_output.png" alt="Backtesting results dashboard showing portfolio value over time and weekly returns" class="artifact-img" />
+					<figcaption>Figure 1: Backtesting Results Dashboard</figcaption>
+				</figure>
 
-				<p>The results come back immediately. You see your starting capital of $100 tracked against the final portfolio value, your win rate, total Profit & Loss, average return per trade, and Return On Investment. The two charts put those numbers in context: the portfolio value curve shows how the strategy performed over time and the weekly returns bars show where the gains and losses were concentrated.</p>
+				<p>Figure 1 demonstrates output for an example query. The results come back immediately. You see your starting capital of $100 tracked against the final portfolio value, your win rate, total Profit & Loss, average return per trade, and Return On Investment. The two charts put those numbers in context: the portfolio value curve shows how the strategy performed over time and the weekly returns bars show where the gains and losses were concentrated.</p>
 				<p>None of these strategies are guaranteed to make money. Prediction markets are efficiently priced, and finding an edge is incredibly difficult, especially over longer periods of time. The app gives you the tools to find out if you can.</p>
 
 

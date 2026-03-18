@@ -25,7 +25,8 @@
 				<p>The project didn't unfold according to a fixed plan so much as it evolved through a series of investigations. When I first connected to the Kalshi API, I didn't fully understand the market structure. I had to poke around and build up a mental model of how it worked before I could write anything meaningful. That turned out to be the right approach, because several of my early assumptions were incorrect.</p>
 
 				<p>The same thing happened with data storage. I went in assuming that a database would outperform flat JSON files and tested SQLite to confirm it. The benchmark said the opposite. Retrieval was slower for the access pattern my backtest actually used. If I had committed to SQLite early without testing, I would have built on a bad foundation. Exploring first and deciding after meant that I ended up with a data format that was smaller and faster than the database could have been.</p>
-				<p>The user interface followed the same process. My original idea of what the app should look like changed a lot by the time it was actually built. Adding the charts is the clearest example, they weren't in the original plan, they came from a Figma template placeholder, and they ended up being the feature people responded to most. This project reinforced something I'll carry into future work: the initial idea is a starting point, not a blueprint.</p>
+				<p>The user interface followed the same process. My original idea of what the app should look like changed a lot by the time it was actually built. Adding the charts is the clearest example, they weren't in the original plan, they came from a Figma template placeholder, and they ended up being the feature people responded to most.</p>
+				<p>This project reinforced something I carry into future work: the initial idea is a starting point, not a blueprint.</p>
 
 				<hr />
 
@@ -34,14 +35,14 @@
 
 				<p>I chose this approach on purpose. I knew from the start that I wanted a clean UI, but I also knew that designing a good UI requires understanding what users actually need. I couldn't know that without having something working to show them first. Building the MVP first wasn't just about managing my time but also making sure the interface decisions would be grounded in real feedback. </p>
 
-				<p>In practice this meant that as the quarter progressed, whenever a feature idea came up, the question was never "can I do this in time?" but rather "what's the most important thing to add next?" Not every feature made it in, but that was a choice I was able to make.</p>
+				<p>In practice this meant that as the quarter progressed, whenever a feature idea came up, the question was never "can I do this in time?" but rather "what's the most important thing to add next?" Not every feature made it in, but that was a choice I was able to make. Recognizing that I plan and execute better when I define a hard floor before the optional work begins is something I hadn't fully articulated about myself before this project.</p>
 
 				<hr />
 
 				<h2>The Audience I Didn't Anticipate</h2>
 				<p>The most consistent source of friction across all the showcases I presented at was something I hadn't prepared for: nobody in the class knew what a prediction market was. I had assumed that a tech-savvy audience would be broadly familiar with platforms like Kalshi or Polymarket. That assumption was really wrong. Every time I presented I expected that my last presentation had given enough context on the project and prediction markets. I was wrong.</p>
 
-				<p>This made asking for useful feedback difficult and choosing questions even more so. If someone doesn't understand the domain, they cannot tell you whether your UI is intuitive or which markets you should include. I couldn't ask any questions that required prerequisite knowledge. Looking back, I should have researched the actual baseline rather than assuming familiarity. I could have done something as simple as asking a few random people beforehand whether they were familiar with prediction markets.</p>
+				<p>This made asking for useful feedback difficult and choosing questions even more so. If someone doesn't understand the domain, they cannot give meaningful feedback on whether the UI is intuitive or which markets to include. I couldn't ask any questions that required prerequisite knowledge. Looking back, I should have researched the actual baseline rather than assuming familiarity. I could have done something as simple as asking a few random people beforehand whether they were familiar with prediction markets. That experience taught me: verify assumptions about an audience before designing for them, not after.</p>
 
 				<p>The Figma dashboard helped close the gap. Having a visual that showed an investment, a win rate, and a portfolio curve gave people some grounding, even without understanding the underlying mechanics. A real fix could be found in a dedicated explanation page. A short introduction to what prediction markets are, how series work, and links to resources like Kalshi's own blog posts that users encounter before they start experimenting. That's planned as a future addition but one I wish I had included from the very beginning.</p>
 
@@ -49,7 +50,7 @@
 				<h2>What Actually Worked </h2>
 				<p>The charts were the surprise success of the project. I added them reluctantly: the Figma template had placeholder graphs and filling them in with real data seemed like a reasonable thing to do. I didn't expect them to be particularly meaningful. Then I wired them to real backtest data and saw the portfolio value curve hover above $101 before declining, and suddenly the story the numbers were telling became legible in a way that a table of figures never could have achieved.</p>
 
-				<p>That experience shifted how I think about data visualization. My instinct had been that the numbers were the substance and the charts were decoration. What I found was the opposite. A −1.15% return looks a strategy is doomed. On a portfolio curve, you can see that the strategy was actually up for most of the period and only declined in the final weeks, which is a genuinely different and more interesting story. I didn't expect that, and the project got a great addition from me testing stuff out.</p>
+				<p>That experience shifted how I think about data visualization. My instinct had been that the numbers were the substance and the charts were decoration. What I found was the opposite. A −1.15% return looks a strategy is doomed. On a portfolio curve, the full story appears: the strategy was actually up for most of the period and only declined in the final weeks, which is a genuinely different and more interesting story. I didn't expect that, and the project got a great addition from me testing stuff out.</p>
 
 				<p>The backtesting engine itself also performed way better than what I expected. Most queries ran in under 10ms for the calculation portion. The bottleneck ended up being data retrieval, not the strategy logic itself. The fact that the calculation was so fast meant the app should feel very responsive, which matters for the user experience.</p>
 
@@ -67,7 +68,7 @@
 				<h2>Next Steps</h2>
 				<p>The foundation is solid and several features are already scoped. Query history, a scrollable list of the last ten backtests a user ran, expandable to show full results would add significant value without requiring much change to the existing architecture. A random query button, which would pick a series and strategy combination at random (helpful for new users who may have choice paralysis), already has most of its code written. It's mainly a design problem of where to put it in the interface without cluttering the layout.</p>
 
-				<p>The explanation gap is the most important thing to address. An introductory page covering prediction market basics with concrete examples and links to external resources would make the tool accessible to a much wider audience. Right now you need to arrive with a fair amount of prior knowledge to get value out of the app. That's an unnecessary requirement and removing it is high priority.</p>
+				<p>The explanation gap is the most important thing to address. An introductory page covering prediction market basics with concrete examples and links to external resources would make the tool accessible to a much wider audience. Right now a user needs to arrive with a fair amount of prior knowledge to get value out of the app. That's an unnecessary requirement and removing it is high priority.</p>
 
 
 			</section>
